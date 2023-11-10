@@ -14,7 +14,7 @@ export default async function Page() {
         totalPaidInvoices,
         totalPendingInvoices,
       } = await fetchCardData();
-
+    //throw new Error(error)
     return (
         <main>
         <h1 className={"mb-4 text-xl md:text-2xl"}>
@@ -33,11 +33,11 @@ export default async function Page() {
         <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
             { /* <RevenueChart revenue={revenue}  /> */ }
             <Suspense fallback={<RevenueChartSkeleton />}>
-            <RevenueChart />
+                <RevenueChart />
             </Suspense>
             { /* <LatestInvoices latestInvoices={latestInvoices} /> */ }
             <Suspense fallback={<LatestInvoicesSkeleton />}>
-              <LatestInvoices />
+                <LatestInvoices />
             </Suspense>
         </div>
         </main>
