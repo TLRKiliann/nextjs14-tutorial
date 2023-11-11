@@ -11,6 +11,7 @@ export default async function InvoicesTable({
   query: string;
   currentPage: number;
 }) {
+
   const invoices = await fetchFilteredInvoices(query, currentPage);
 
   return (
@@ -18,6 +19,7 @@ export default async function InvoicesTable({
       <div className="inline-block min-w-full align-middle">
         <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
           <div className="md:hidden">
+
             {invoices?.map((invoice) => (
               <div
                 key={invoice.id}
@@ -53,6 +55,7 @@ export default async function InvoicesTable({
                 </div>
               </div>
             ))}
+
           </div>
           <table className="hidden min-w-full text-gray-900 md:table">
             <thead className="rounded-lg text-left text-sm font-normal">
@@ -78,6 +81,7 @@ export default async function InvoicesTable({
               </tr>
             </thead>
             <tbody className="bg-white">
+
               {invoices?.map((invoice) => (
                 <tr
                   key={invoice.id}
@@ -85,6 +89,7 @@ export default async function InvoicesTable({
                 >
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex items-center gap-3">
+                      
                       <Image
                         src={invoice.image_url}
                         className="rounded-full"
@@ -92,6 +97,7 @@ export default async function InvoicesTable({
                         height={28}
                         alt={`${invoice.name}'s profile picture`}
                       />
+
                       <p>{invoice.name}</p>
                     </div>
                   </td>
@@ -115,6 +121,7 @@ export default async function InvoicesTable({
                   </td>
                 </tr>
               ))}
+
             </tbody>
           </table>
         </div>
