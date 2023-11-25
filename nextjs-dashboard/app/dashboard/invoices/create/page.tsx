@@ -17,8 +17,7 @@ export default async function Page() {
             href: '/dashboard/invoices/create',
             active: true,
           },
-        ]}
-      />
+      ]} />
       <Form customers={customers} />
     </main>
   );
